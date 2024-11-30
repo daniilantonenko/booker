@@ -64,6 +64,8 @@ class Library:
 
     def remove_book(self, book_id: int):
         """Удаляет книгу по ID."""
+        if not any(book.book_id == book_id for book in self.books):
+            raise ValueError("Книга с таким ID не найдена.")
         self.books = [book for book in self.books if book.book_id != book_id]
         self.save_books()
 
