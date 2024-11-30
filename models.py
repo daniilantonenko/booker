@@ -19,6 +19,9 @@ class Book:
             "status": self.status,
         }
 
+    def __str__(self):
+        return f"ID: {self.book_id}, Название: {self.title}, Автор: {self.author}, Год издания: {self.year}, Статус: {self.status}"
+
     @staticmethod
     def from_dict(data: dict):
         return Book(

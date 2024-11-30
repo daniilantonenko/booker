@@ -2,7 +2,8 @@ from models import Library
 
 def main():
     library = Library()
-
+    
+    # Главное меню
     while True:
         print("\nСистема управления библиотекой")
         print("1. Добавить книгу")
@@ -12,7 +13,8 @@ def main():
         print("5. Показать все книги")
         print("6. Выход")
         choice = input("Выберите действие (1-6): ")
-
+        
+        # Обработка выбора
         try:
             if choice == "1":
                 title = input("Введите название книги: ")
@@ -31,7 +33,7 @@ def main():
                 if found_books:
                     print("Найденные книги:")
                     for book in found_books:
-                        print(book.to_dict())
+                        print(book)
                 else:
                     print("Книги не найдены.")
             elif choice == "4":
@@ -44,7 +46,7 @@ def main():
                 if books:
                     print("Список книг:")
                     for book in books:
-                        print(book.to_dict())
+                        print(book)
                 else:
                     print("Библиотека пуста.")
             elif choice == "6":
