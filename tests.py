@@ -1,5 +1,5 @@
 import unittest
-from main import Library, Book
+from models import Library, Book
 
 
 class TestLibrary(unittest.TestCase):
@@ -46,6 +46,8 @@ class TestLibrary(unittest.TestCase):
 
     def test_invalid_remove_book(self):
         """Проверка удаления несуществующей книги."""
+        if not any(book.book_id == book_id for book in self.books):
+            raise ValueError("Книга с таким ID не найдена.")
         with self.assertRaises(ValueError):
             self.library.remove_book(99)
 
