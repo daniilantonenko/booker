@@ -1,5 +1,5 @@
 import unittest
-from models import Library, Book
+from main import Library, Book
 
 
 class TestLibrary(unittest.TestCase):
